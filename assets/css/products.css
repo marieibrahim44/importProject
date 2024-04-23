@@ -1,0 +1,98 @@
+@media (max-width : 768px){
+    .header .navbar a{
+        display: block;
+        text-align: center;
+        font-size: 1.8rem;
+        margin: 2rem 2.5rem;
+        width: 100%;
+        z-index: 25;
+    }
+}
+.products{
+    margin-top: 10rem
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+.box{
+    margin-right: 1.5rem; 
+    background-color: var(--backSecond-color-light);
+    box-shadow:1px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 1.5rem 1rem;
+    padding: 1rem 1.5rem;
+    position: relative;
+    width: 100%
+}
+.box::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   border: 20px solid transparent;
+   border-top: 20px solid var(--hover-color-light);
+   border-right: 20px solid var(--hover-color-light);
+}
+.box.active::before{
+   border-top: 20px solid var(--main-color-light);
+   border-right: 20px solid var(--main-color-light);
+}
+.box .box-img{
+   width:100%;
+   height: 200px
+}
+.box .box-img img{
+    width:100%;
+    height: 100%
+}
+.product-info{
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+.product-info::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent , var(--backSecond-color-light))
+}
+.product-info h3{
+    background-color: var(--main-color-light);
+    padding: 1rem 1.4rem;
+    display: inline-block;
+    clip-path: polygon(100% 0 , 93% 50% , 100% 95% , 0% 100% , 7% 50% , 0 0 );
+    font-weight: bold;
+    font-size:2rem;
+    margin: 10px 0;
+}
+.product-info p{
+    font-size: 1.3rem
+}
+.box .more{
+    position: relative;
+    padding: 10px 15px;
+    background: var(--main-color-light);
+    margin-top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold
+}
+
+.box.active .product-info{
+    height: auto;
+    overflow: visible
+}
+.box.active .product-info::before{
+    display: none
+}
+@media (max-width : 450px){
+    .product-info{
+        height: 100px;
+    }
+}
